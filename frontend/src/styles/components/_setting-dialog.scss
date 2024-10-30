@@ -1,0 +1,73 @@
+.settings-dialog {
+    .MuiDialog-paper {
+      background-color: rgba($white, 0.95);
+      backdrop-filter: blur($blur);
+      min-width: $sidebar-width;
+      border-radius: 24px;
+    }
+  
+    .MuiDialogTitle-root {
+      padding: $spacing-lg $spacing-xl;
+      color: $secondary-color;
+      font-weight: $font-weight-medium;
+    }
+  
+    .MuiDialogContent-root {
+      padding: $spacing-lg $spacing-xl $spacing-xl;
+    }
+  
+    .settings-form-control {
+      margin-top: $spacing-md;
+  
+      .MuiInputLabel-root {
+        color: $secondary-color;
+      }
+  
+      .MuiSelect-select {
+        background-color: $white;
+      }
+  
+      .MuiPaper-root.MuiPopover-paper {
+        background-color: $white;
+        border-radius: 12px;
+        box-shadow: $box-shadow;
+      }
+  
+      .MuiOutlinedInput-root {
+        border-radius: 12px;
+        background-color: $white;
+        
+        &.Mui-focused .MuiOutlinedInput-notchedOutline {
+          border-color: $primary-color;
+        }
+        
+        &:hover .MuiOutlinedInput-notchedOutline {
+          border-color: rgba($primary-color, 0.7);
+        }
+      }
+  
+      .MuiMenuItem-root {
+        padding: $spacing-md $spacing-lg;
+        
+        &:hover {
+          background-color: rgba($primary-color, 0.1);
+        }
+        
+        &.Mui-selected {
+          background-color: rgba($primary-color, 0.2);
+          
+          &:hover {
+            background-color: rgba($primary-color, 0.3);
+          }
+        }
+      }
+    }
+  }
+  
+  // Override Material-UI's Popover styles globally for Select menus
+  .MuiPopover-root {
+    .MuiPaper-root {
+      background-color: $white !important;
+      margin-top: $spacing-xs;
+    }
+  }

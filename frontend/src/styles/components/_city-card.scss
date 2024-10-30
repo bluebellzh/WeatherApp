@@ -1,0 +1,73 @@
+.city-card {
+    padding: $spacing-md;
+    border-radius: 16px;
+    margin-bottom: $spacing-sm + $spacing-xs;
+    cursor: pointer;
+    background-color: rgba($white, 0.15);
+    @include glass-effect;
+    transition: all $transition-duration $transition-timing;
+    height: $spacing-lg * 3;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    
+    &:hover {
+      background-color: rgba($white, 0.2);
+    }
+    
+    &--selected {
+      padding: $spacing-lg;
+      height: auto;
+      max-width: 400px;
+      background-color: rgba(82, 133, 244, 0.9);
+      z-index: $z-index-modal;
+      
+      &:hover {
+        background-color: rgba(82, 133, 244, 0.9);
+      }
+    }
+  
+    &__delete-button {
+      position: absolute !important;
+      top: $spacing-xs;
+      right: $spacing-xs;
+      z-index: $z-index-overlay;
+      color: $white;
+      
+      &:hover {
+        background-color: rgba($white, 0.1);
+      }
+    }
+  
+    &__content {
+      color: $white;
+      
+      &--unselected {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: $spacing-xl;
+      }
+    }
+  
+    &__location {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+      
+      &-icon {
+        color: rgba($dark, 0.6);
+        font-size: $font-size-base * 1.25;
+      }
+      
+      &-city {
+        color: $dark;
+        font-weight: $font-weight-medium;
+      }
+      
+      &-country {
+        color: rgba($dark, 0.7);
+        font-size: $font-size-base * 0.875;
+      }
+    }
+  }

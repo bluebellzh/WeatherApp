@@ -1,0 +1,24 @@
+.weather-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-xl;
+    color: $white;
+  
+    &__location {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+      margin-bottom: $spacing-sm;
+  
+      .MuiSvgIcon-root {
+        color: $white;
+      }
+    }
+  
+    &__temperature {
+      margin-left: $spacing-xl;
+      color: $white;
+      opacity: 0.8;
+    }
+  }

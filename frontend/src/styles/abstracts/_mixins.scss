@@ -1,0 +1,98 @@
+@import 'variables';
+
+// Glass effect
+@mixin glass-effect {
+  backdrop-filter: blur($blur);
+  background-color: $glass-bg;
+  border: 1px solid rgba($white, 0.2);
+  box-shadow: $box-shadow;
+}
+
+// Background gradient with overlay
+@mixin background-gradient {
+  background: linear-gradient(to bottom, $secondary-color, $primary-color);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: $overlay;
+  }
+}
+
+// Flexbox helpers
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Typography styles
+@mixin temperature-large {
+  font-size: $font-size-large;
+  line-height: 1;
+  font-weight: $font-weight-light;
+  letter-spacing: $letter-spacing-temp;
+}
+
+@mixin temperature-unit {
+  font-size: $font-size-unit;
+  margin-top: $spacing-sm;
+  margin-left: $spacing-xs;
+}
+
+// Responsive breakpoints
+@mixin respond-to($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+// Transitions
+@mixin smooth-transition($properties...) {
+  $transitions: ();
+  @each $property in $properties {
+    $transitions: append(
+      $transitions,
+      #{$property} $transition-duration $transition-timing,
+      comma
+    );
+  }
+  transition: $transitions;
+}
+
+// Truncate text
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Absolute positioning
+@mixin position-absolute($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// Grid layout
+@mixin grid-container($columns: $grid-columns, $gap: $grid-gutter) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}

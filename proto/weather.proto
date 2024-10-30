@@ -1,0 +1,49 @@
+syntax = "proto3";
+package weather;
+
+service WeatherService {
+  rpc GetCurrentWeather (WeatherRequest) returns (WeatherResponse);
+  rpc GetForecast (ForecastRequest) returns (ForecastResponse);
+}
+
+message WeatherRequest {
+  string client_id = 1;
+  double latitude = 2;
+  double longitude = 3;
+  string provider = 4;
+}
+
+message WeatherResponse {
+  double temperature = 1;
+  string condition = 2;
+  double wind_speed = 3;
+  double wind_direction = 4;
+  double humidity = 5;
+  double visibility = 6;
+  double uv_index = 7;
+  double rain_chance = 8;
+  double max_temp = 9;
+  double min_temp = 10;
+  string country = 11;
+  string provider = 12;
+}
+
+message ForecastRequest {
+  string client_id = 1;
+  double latitude = 2;
+  double longitude = 3;
+  string provider = 4;
+  int32 days = 5;
+}
+
+message ForecastResponse {
+  repeated DayForecast forecasts = 1;
+}
+
+message DayForecast {
+  string date = 1;
+  float max_temp = 2;
+  float min_temp = 3;
+  string condition = 4;
+}
+

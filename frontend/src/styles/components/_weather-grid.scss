@@ -1,0 +1,15 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  width: 100%;
+}
+
+.temperature-container {
+  padding: $spacing-lg;
+  border-radius: $border-radius;
+}

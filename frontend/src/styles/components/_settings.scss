@@ -1,0 +1,43 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.settings-panel {
+  position: fixed;
+  top: $spacing-lg;
+  right: $spacing-lg;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: $spacing-md;
+  
+  .MuiIconButton-root {
+    background-color: $white !important;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    padding: 12px;
+    
+    &:hover {
+      background-color: rgba($white, 0.9) !important;
+    }
+    
+    .MuiSvgIcon-root {
+      width: 24px;
+      height: 24px;
+      color: $secondary-color;
+    }
+  }
+
+  .time-display {
+    color: $white;
+    font-size: 1.5rem;
+    margin-top: $spacing-sm;
+  }
+
+  .date-display {
+    color: $white;
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+}

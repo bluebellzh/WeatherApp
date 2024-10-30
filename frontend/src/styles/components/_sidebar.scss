@@ -1,0 +1,38 @@
+.sidebar {
+    padding: $spacing-lg;
+    height: 100vh;
+    border-right: 1px solid rgba($white, 0.08);
+    @include flex-column;
+    position: relative;
+    isolation: isolate;
+  
+    &__header {
+      margin-bottom: $spacing-xl;
+      position: relative;
+      z-index: $z-index-overlay;
+  
+      &-title {
+        margin-bottom: $spacing-md;
+        color: $white;
+      }
+    }
+  
+    &__content {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: visible;
+      margin-right: -$spacing-lg;
+      padding-right: $spacing-lg;
+      margin-left: -$spacing-lg;
+      padding-left: $spacing-lg;
+      position: relative;
+      z-index: $z-index-content;
+  
+      // Hide scrollbar
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+  }

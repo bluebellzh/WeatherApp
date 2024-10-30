@@ -1,0 +1,39 @@
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.background-gradient {
+  position: absolute;
+  inset: 0;
+  @include background-gradient;
+  z-index: 0;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: $sidebar-width; // Add margin to account for fixed sidebar
+  padding: $spacing-xl;
+  overflow-y: auto;
+}
+
+// Sidebar styles
+.sidebar-drawer {
+  .MuiDrawer-paper {
+    position: fixed;
+    width: $sidebar-width;
+    border: none;
+    background: transparent;
+    @include glass-effect;
+  }
+} 
