@@ -12,8 +12,6 @@ A modern weather application built with React and Material-UI that displays weat
 
 1. Clone the repository
 
-git clone <your-repo-url>
-cd weather-app/frontend
 2. Install dependencies
 
 npm install
