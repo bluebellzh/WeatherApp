@@ -7,22 +7,15 @@ A gRPC-based weather service that aggregates data from multiple weather provider
 - Multiple weather provider support (OpenWeather, WeatherAPI)
 - gRPC API for real-time weather data
 - Configurable provider settings
-- User city preferences storage
 
 ## Prerequisites
 
 - Rust (1.70 or later)
-- PostgreSQL (14.0 or later)
 - API keys for weather providers
 
 ## Setup
 
 1. Clone the repository:
-
-```bash
-git clone https://github.com/your_username/weather-service.git
-cd server
-```
 
 2. Copy the configuration template:
 
